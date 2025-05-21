@@ -85,10 +85,3 @@ Zadania zostały podzielone według rodzaju operacji i poziomu trudności:
 
 ---
 
-📝 **Instrukcje dla studentów:**
-
-* Wszystkie rozwiązania umieść w jednym pliku o nazwie `script.js`.
-* Możesz używać poleceń `mongo` shell lub sterownika Node.js.
-* Upewnij się, że kod jest czytelny i odpowiednio komentowany.
-
-Powodzenia! 🚀
