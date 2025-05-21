@@ -33,7 +33,8 @@ db.orders.aggregate([
 ]);
 ```
 
-Jeśli dokument zawiera pole `items: ["A", "B"]`, po `$unwind` otrzymujemy dwa dokumenty z `items: "A"` i `items: "B"`.
+> 🔎 *Rozdziela dokumenty na podstawie tablicy `items` — każdy element tablicy staje się osobnym dokumentem.*
+> Jeśli dokument zawiera pole `items: ["A", "B"]`, po `$unwind` otrzymujemy dwa dokumenty z `items: "A"` i `items: "B"`.
 
 **Opcje dodatkowe:**
 
@@ -69,6 +70,8 @@ db.orders.aggregate([
 ]);
 ```
 
+> 🔎 *Zlicza całkowitą liczbę sztuk (`qty`) sprzedanych dla każdego produktu (`items.name`).*
+
 ---
 
 ### 🔬 `$project`
@@ -98,6 +101,8 @@ db.users.aggregate([
 ]);
 ```
 
+> 🔎 *Tworzy nowe pole `fullName` jako połączenie `first_name` i `last_name`, pozostawiając tylko email i usuwając `_id`.*
+
 ---
 
 ## 📚 Inne popularne operatory
@@ -124,13 +129,17 @@ db.customers.aggregate([
 ]);
 ```
 
+> 🔎 *Filtruje faktury o wartości powyżej 10, grupuje według klienta i sortuje ich całkowite wydatki malejąco.*
+
 ---
 
 ## 📌 Uwagi końcowe
 
 * Kolejność etapów ma znaczenie!
 * `$unwind` może znacznie zwiększyć liczbę dokumentów — warto używać go z rozwagą.
+* Agregacje można testować w MongoDB Compass, shellu, albo w kodzie Node.js za pomocą metody `.aggregate()`.
 
 ---
 
 Masz pytania? Zerknij na oficjalną dokumentację MongoDB: [https://www.mongodb.com/docs/manual/aggregation/](https://www.mongodb.com/docs/manual/aggregation/)
+
